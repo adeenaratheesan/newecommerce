@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* .container {
+        width: 100px;
+        height: 200px;
+
+    } */
+
+    .card-img-top {
+        width: 70px;
+        height: 70px;
+
+    }
+
+    .product {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+    }
+</style>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+
+        <div class="main_div">
+            <div class="page_div">
+                <div class="amazon_div">
+                    <h1>CUSTOMER HOME</h1>
+
+
+
+                    <table>
+                        <tr>
+                            
+                           
+                            <td> <a href="{% url 'customer:myorder' %}"><input type="button" value="Orders"></a></td>
+                            <td> <a href="{% url 'customer:change_pass' %}"><input type="button"
+                                        value="Change Password"></a></td>
+                            <td> <a href="{% url 'customer:mycart' %}"><input type="button" value="my cart"></a></td>
+                            <td> <a href="{% url 'customer:cus_profile' %}"><input type="button" value="Profile"></a>
+                            </td>
+                            <td> <a href="{% url 'homecommon:home' %}"><input type="button" value="Log out"></a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="product">
+                    {% for product in prod_data %}
+
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product_details.product_name}}</h5>
+                            <p class="card-text">{{product.Product_price}}</p>
+                            <p class="card-text">{{product.description}}</p>
+                            <!-- <input type="button" value="buy now">
+                            <a href="{% url 'customer:product_detail' product.id %}"></a> -->
+
+                            <a href="{% url 'customer:product_detail' product.id %}" class="btn btn-primary">Buy Now</a>
+                            <input type="button" value="update stock"><a href="#" class="btn btn-primary"></a>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>ADMIN PANEL</h1>
+       <a href="{% url 'ecommerce_admin:approve_seller' %}"><button> Approve seller</button> </a>
+       <a href="{% url 'ecommerce_admin:view_seller' %}"><button> view seller</button> </a>
+       <a href="#"><button> view customer</button> </a>
+       <table>
+        <TR><td>APPROVE SELLER</td></TR>
+        <tr>
+            <td>sno</td>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Acc no</td>
+            <td>IFSC</td>
+            <td>Branch</td>
+            <td>Company NAme</td>
+            <td>Phone</td>
+            <td>seller pic</td>
+            <td>Actions</td>
+        </tr>
+       </table>
+
+
+    </form>
+    
+</body>
+</html>

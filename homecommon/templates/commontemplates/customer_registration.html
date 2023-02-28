@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!-- jquery link below  -->
+    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="main_div">
+            <div class="page_div">
+                <div class="amazon_div">
+                    <!-- <h1>AMAZON.IN</h1> -->
+                </div>
+                <div class="content_div">
+                    <div class="create_div">
+                        <table>
+                            <th> CREATE ACCOUNT </th>
+                            <tr>
+                                <td><label for="">Name</label></td>
+                                 <td><input type="text" placeholder="Enter your name" name="c_name"></td>
+                            </tr>
+                            <tr>
+                                <td>gender</td>
+                            
+                                <td><input type="radio"  name="c_gender" value="female">Female
+                                    <input type="radio" name="c_gender" value="male">Male</td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Phone number</label></td>
+                            
+                                <td><input type="text" placeholder="Enter your phone number" name="c_phone" id=""></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="">E-mail (Optional)</label></td>
+                                <td><input type="text" placeholder="Enter your e-mail"name="c_mail" id="email"></td>
+                                <td><span id="email_exist"></span></td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                            
+                                <td><input type="text" placeholder="enter your address" name="c_add"></td>
+                            </tr>
+                            
+                            <tr>
+                                <td><label for="">Enter your password</label></td>
+                            
+                                <td><input type="text" placeholder="At least 6 characters" name="c_pass"></td>
+                            </tr>
+                            <tr>
+                                <td>Upload image</td> <td><input type="file" name="c_img" id=""></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" value="create new account"></td>
+                            </tr>
+
+                            <!-- <tr>
+                                <td>Already have an account?<a href="#">Sign in</a></td>
+                            </tr>
+                            <tr>
+                                <td>Buying for work? <a href="#">Create a free business account</a></td>
+                            </tr>
+                            <tr>
+                                <td>By creating an account or logging in,you agree <br> to Amazon's Conditions of use
+                                    and privacy Policy</td>
+                            </tr> -->
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+    <script>
+        // $('#email') is the id of input box email
+        $('#email').change(function(){
+        $.ajaxSetup({
+            headers: {
+              "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()  //passing csrf token in ajax request
+            }
+        })
+
+        $.ajax({
+            url:"{% url 'homecommon:email_exist' %}",  // url in which ajax call is made
+            type:'POST',  //method in which data is send
+            data:{
+                // emailid:$(this).val() here this emailid is a variable that stores value of input box email ,this variable name should be given in views.py [def email_exist(request):
+    // email=request.POST['emailid']]
+                
+                emailid:$(this).val()  //sending data in json fromat here, key is email
+            },
+            success:function(response){  
+                // status is passed here to display 
+                console.log(response.status)
+                // alert('email id already exists')    to show in alert box that email id already exists 
+                // below code to show in span tag that email id already exists,give a span tag below input box of emailid
+                if(response.status==true)
+                $('#email_exist').html('email alreadyexists')
+            }
+        })
+    })
+
+
+    </script>
+</body>
+
+</html>

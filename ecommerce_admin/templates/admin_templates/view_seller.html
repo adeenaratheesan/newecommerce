@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h1>ADMIN PANEL</h1>
+       <a href="{% url 'ecommerce_admin:approve_seller' %}"><button> Approve seller</button> </a>
+       <a href="{% url 'ecommerce_admin:view_seller' %}"><button> view seller</button> </a>
+       <a href="#"><button> view customer</button> </a>
+       <table>
+        <TR><td>view SELLER</td></TR>
+        <div class="div-grid">
+            <div class="content-div">
+                <table>
+                    <tr>
+                        <!-- <th>SR NO:</th> -->
+                        <th>Seller Id</th>
+                        <th>Seller Name</th>
+                        <th>Seller Address</th>
+                        <th>Mobile</th>
+                        <th>Email</th>
+                        <th>Company Logo</th>
+                        <th>Bank Name</th>
+                        <th>Account Holder</th>
+                        <th>Account No:</th>
+                        <th>Ifsc</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>
+                    {% for sel_dtls in sel_details %}
+                    <tr>
+                        <td>{{sel_dtls.id}}</td>
+                        <td>{{sel_dtls.company_name}}</td>
+                        <td>{{sel_dtls.company_address}}</td>
+                        <td>{{sel_dtls.company_mobile}}</td>
+                        <td>{{sel_dtls.company_email}}</td>
+                        <td><img src="{{sel_dtls.company_logo.url}}" width="100px" height="100px"></td>
+                        <td>{{sel_dtls.bank_name}}</td>
+                        <td>{{sel_dtls.acc_holder}}</td>
+                        <td>{{sel_dtls.acc_no}}</td>
+                        <td>{{sel_dtls.ifsc_code}}</td>
+                        <td>{{sel_dtls.seller_username}}</td>
+                        <td>{{sel_dtls.seller_password}}</td>
+                    </tr>
+                    {% endfor %}
+                    
+                </table>
+        
+            </div>
+        
+       </table>
+
+
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+       
+        <tr>
+            <h1>CUSTOMER PROFILE</h1>
+            <input type="submit" name="" value="edit profile" id=""><BR>
+            NAME :<h1>{{data.customer_name}}</h1>
+            
+            <img src="{{data.image.url}}" alt="">
+            <br>
+            GENDER:{{data.gender}}<br>
+            PHONE NUMBER:{{data.ph_number}}<br>
+            E-MAIL:{{data.e_mail}}<br>
+            ADDRESS:{{data.address}}<br>
+            
+        </tr>
+        
+       </form>
+        
+</body>
+</html>

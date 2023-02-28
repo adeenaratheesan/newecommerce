@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="main_div">
+            <div class="page_div">
+                <!-- <div class="amazon_div">
+                    <h1>AMAZON.IN</h1>
+                </div> -->
+                <div class="content_div">
+                    <div class="create_div">
+                        <div class="menu_div">
+                            <h2>MENU</h2>
+                        </div>
+                        <div><a href="{% url 'seller:sel_home' %}"> <label id="alllabel">Home</label></a> </div>
+                        <div><a href="{% url 'seller:product_catelogue' %}"> <label id="alllabel">Product
+                                    Catelogue</label></a></div>
+                        <div><a href="{% url 'seller:add_product' %}"> <label id="alllabel">Add Product</label></a>
+                        </div>
+                        <div><a href="{% url 'seller:change_pass' %}"> <label id="alllabel">Change Password</label></a>
+                        </div>
+                        <div><a href="{% url 'seller:sel_profile' %}"> <label id="alllabel">Profile</label></a> </div>
+                        <div><a href="{% url 'seller:recent_orders' %}"> <label id="alllabel">Recent Orders</label></a>
+                        </div>
+                        <div><a href="{% url 'seller:update_stock' %}"> <label id="alllabel">Update Stock</label></a>
+                        </div>
+                        <div><a href="{% url 'seller:order_his' %}"> <label id="alllabel">Order History</label></a>
+                        </div>
+                        <div>
+                            <h1>PRODUCT DETAILS</h1>
+                        </div>
+                        <table>
+
+                            <tr>
+                                <td><label for="">Product Name</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="" name="s_pname"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Product num</label></td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="s_pid"></td>
+                            <tr>
+                                <td><label for="">Description</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="" name="s_pdescription" id=""></td>
+                            </tr>
+
+                            <tr>
+                                <td><label for="">Product Stock</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="" name="s_pstock"></td>
+                            </tr>
+
+
+                            <tr>
+                                <td><label for="">Product price</label></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" name="s_pprice"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="myfile">Product image</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="file" id="myfile" name="s_pimg"><br><br></td>
+                            </tr>
+                            <tr>
+
+                                <td><input type="submit" name="" value="submit"></td>
+                            </tr>
+
+
+                        </table>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</body>
+
+</html>

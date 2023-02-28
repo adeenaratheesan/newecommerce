@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="main_div">
+            <div class="page_div">
+                <div class="amazon_div">
+                    <!-- <h1>AMAZON.IN</h1> -->
+                </div>
+                <div class="content_div">
+                    <div class="create_div">
+                        <table>
+                            <tr>
+                                <th>Sign in</th>
+                            </tr>
+                            <tr>
+                                <td><label for="">Email or mobile phone number</label></td>
+                            
+                                <td><input type="text" name="c_mail" ></td>
+                            </tr>
+                            <tr>
+                                <td>Enter your password</td>
+                            
+                                <td><input type="text"name=c_pass></td>
+                            </tr>
+                            <tr>
+                                <td><input type="submit" name="" id=""></td>
+                                {{msg}}
+                
+                            </tr>
+                            <!-- <tr><td>OR</td></tr> -->
+                            <!-- <tr>
+                                <td><button>Create new account</button></td>
+                
+                            </tr> -->
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+</body>
+
+</html>

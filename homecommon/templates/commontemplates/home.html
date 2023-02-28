@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="main_div">
+            <div class="page_div">
+                <div class="welcom">
+                    <!-- <h1> WELCOME</h1> -->
+                </div>
+                <div class="content_div">
+                    <div class="menu_div">
+                        <h2>MENU</h2>
+                    </div>
+                    <div><a href="{% url 'seller:sel_home' %}"> <input type="button" name="" id="" value="HOME"></a> 
+                   <a href="{% url 'seller:product_catelogue' %}"> <input type="button" name="" id="" value="PRODUCT"></a>
+                   <a href="{% url 'seller:add_product' %}"> <input type="button" name="" id="" value="ADD PRODUCT"></a> 
+                   <a href="{% url 'seller:change_pass' %}"> <input type="button" name="" id="" value="CHANGE PASSWORD"></a>
+                    
+                   <a href="{% url 'seller:sel_profile' %}"> <input type="button" name="" id="" value="PROFILE"></a> 
+                   <a href="{% url 'seller:recent_orders' %}"> <input type="button" name="" id="" value="RECENT ORDERS"></a>
+                    
+                   <a href="{% url 'seller:update_stock' %}"> <input type="button" name="" id="" value="UPDATE STOCK"></a> 
+                   <a href="{% url 'seller:order_his' %}"><input type="button" name="" id="" value="ORDER HISTORY"></a></div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

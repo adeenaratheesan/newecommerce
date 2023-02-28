@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action=""method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <tr>
+        <h1>SELLER PROFILE</h1>
+        name :
+        <h1>{{data.seller_name}}</h1>
+        image :
+        <img src="{{data.company_logo.url}}" alt="">
+        <br>
+        company name:{{data.company_name}}<br>
+        account number:{{data.s_acc_no}}<br>
+
+        IFSC CODE:{{data.ifsc}}<br>
+        BRANCH:{{data.s_branch_name}}<br>
+        ACCOUNT HOLDER NAME:{{data.acc_name}}<br>
+        PHONE NUMBER:{{data.mobile}} <br>
+        E-MAIL:{{data.e_mail}} <br>
+        ADDRESS:{{data.address}} <br>
+        USERNAME:{{data.Username}} <br>
+    </tr>
+   </form>
+    
+</body>
+</html>
